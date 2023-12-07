@@ -18,12 +18,12 @@ spec:
         app: chaincode-basic-org2
     spec:
       containers:
-        - image: adityajoshi12/basic-cc-hlf:1.0
+        - image: aravind28196/basic-cc-repo:1.0
           name: chaincode-basic-org2
           imagePullPolicy: Always
           env:
             - name: CHAINCODE_ID
-              value: "basic:42cd6f87d7ae9c9c8e4e30e7d1d21404c1cb494f87a8831ae1988ed209521ca1"
+              value: "basic:d06cfa42523ecb225ff9e539729064d6a21c507020cdfacf21fbbe209564d099"
             - name: CHAINCODE_SERVER_ADDRESS
               value: "0.0.0.0:7052"
           ports:
