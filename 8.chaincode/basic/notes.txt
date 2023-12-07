@@ -1,0 +1,8 @@
+#go must be installed in the host system to perform this command
+go mod tidy
+#then it will create go.sum file only after that we should build the docker image
+
+
+
+docker build -t aravind28196/basic-cc:1.0 .
+docker push aravind28196/basic-cc:1.0

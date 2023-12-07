@@ -1,0 +1,25 @@
+tar cfz code.tar.gz connection.json
+tar cfz basic-org1.tgz code.tar.gz metadata.json 
+rm code.tar.gz
+
+#edit connection.json 
+tar cfz code.tar.gz connection.json
+tar cfz basic-org2.tgz code.tar.gz metadata.json
+rm code.tar.gz
+
+#getting package-id 
+#Org1cli container
+cd opt/gopath/src/github.com/chaincode/basic/packaging
+
+peer lifecycle chaincode install basic-org1.tar.gz
+
+#from output
+package id - basic:7010dc6f08c0f792bd73680ab0be7ebabd6750e9f94bdee0b79066317ef8ea48
+
+#Org2cli container
+cd opt/gopath/src/github.com/chaincode/basic/packaging
+
+peer lifecycle chaincode install basic-org2.tar.gz
+
+#from output
+package id - basic:d06cfa42523ecb225ff9e539729064d6a21c507020cdfacf21fbbe209564d099
