@@ -18,7 +18,7 @@ spec:
       ports:
         - containerPort: 80
       volumeMounts:
-        - mountPath: /mnt/nfs-client
+        - mountPath: /mnt/data
           name: myvolume
   volumes:
     - name: myvolume

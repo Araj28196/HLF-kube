@@ -3,13 +3,12 @@ kind: PersistentVolume
 metadata:
   name: mypv
 spec:
-  storageClassName: standard
   capacity:
     storage: 5Gi
   volumeMode: Filesystem
   accessModes:
     - ReadWriteOnce
-  nfs:
-    path: /mnt/nfs_share/
-    server: 34.70.30.122
-   
+  persistentVolumeReclaimPolicy: Retain
+  storageClassName: standard  
+  hostPath:
+    path: "/mnt/data"
