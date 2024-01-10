@@ -8,7 +8,7 @@ spec:
   accessModes:
     - ReadwriteMany
   mypv:
-    secretName: azure-qa-accesskey
+    secretName: sc-qa-accesskey
     shareName: sasubfinledgerqa01
     readOnly: false
 mountOptions:
