@@ -9,7 +9,7 @@ spec:
     - ReadwriteMany
   mypv:
     secretName: sc-qa-accesskey
-    shareName: sasubfinledgerqa01
+    shareName: hlf
     readOnly: false
 mountOptions:
 - dir_mode=0777
