@@ -1,0 +1,13 @@
+For Creating this fileshare concept this sources helped me
+
+https://github.com/kubernetes-sigs/azurefile-csi-driver/tree/master/deploy/example
+https://learn.microsoft.com/en-us/azure/aks/azure-files-csi#use-a-persistent-volume-with-private-azure-files-storage-private-endpoint
+
+For understanding sysbox this sources helped me
+
+https://blog.nestybox.com/2022/01/03/dink.html
+https://sestegra.medium.com/whats-sysbox-by-nestybox-3b4dbcfe878
+https://coder.com/docs/v2/latest/templates/docker-in-workspaces#envbox
+https://github.com/nestybox/sysbox/blob/master/docs/user-guide/install-k8s-distros.md#azure-kubernetes-service-aks
+https://github.com/nestybox/sysbox/blob/master/docs/quickstart/README.md
+https://github.com/nestybox/sysbox/blob/master/docs/user-guide/install.md
