@@ -15,7 +15,7 @@ spec:
       volumes:
         - name: data
           persistentVolumeClaim:
-            claimName: mypvc
+            claimName: pvc-azurefile
       containers:
 
         - name: ca-org2

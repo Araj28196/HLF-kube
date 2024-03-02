@@ -15,7 +15,7 @@ spec:
            volumes:
              - name: fabricfiles
                persistentVolumeClaim:
-                  claimName: mypvc
+                  claimName: pvc-azurefile
            containers:
              - image: hyperledger/fabric-orderer:2.3
                name: orderer3
