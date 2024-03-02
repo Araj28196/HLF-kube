@@ -1,26 +1,15 @@
 apiVersion: v1
 kind: Pod
 metadata:
-  name: task-pv-pod
-  labels:
-    app: task-pv
+  name: ubuntu-sysbox
 spec:
   containers:
-    - name: task-pv-container
-      image: nginx
-      resources:
-        requests:
-          memory: "64Mi"
-          cpu: "250m"
-        limits:
-          memory: "128Mi"
-          cpu: "500m"
-      ports:
-        - containerPort: 80
-      volumeMounts:
-        - mountPath: /mnt/data
-          name: myvolume
+  - image: blockchainazure.azurecr.io/ubuntu-sysbox:1
+    name: mypod
+    volumeMounts:
+      - name: azure
+        mountPath: /mnt/data
   volumes:
-    - name: myvolume
-      persistentVolumeClaim:
-        claimName: mypvc
+  - name: azure
+    persistentVolumeClaim:
+      claimName: pvc-azurefile

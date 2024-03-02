@@ -1,0 +1,5 @@
+In case if /r: command not found is not found error is thrown try the following command
+
+sed -i 's/\r$//' scriptname
+
+explanation Option -i is for in-place editing, we delete the trailing \r directly in the input file. thus be careful to type the pattern correctly

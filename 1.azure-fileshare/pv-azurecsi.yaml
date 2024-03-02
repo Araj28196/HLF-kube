@@ -17,14 +17,13 @@ spec:
     - uid=0
     - gid=0
     - mfsymlinks
-    - cache=strict  
-    - nosharesock
+    - nobrl  
   csi:
     driver: file.csi.azure.com
     # make sure volumeid is unique for every identical share in the cluster
-    volumeHandle: sasubfinledgerqa01_hlf
+    volumeHandle: hlfstorageaccount_hlf
     volumeAttributes:
       shareName: hlf  # only file share name, don't use full path
     nodeStageSecretRef:
-      name: sc-qa-accesskey
+      name: sc-accesskey
       namespace: finledger
