@@ -1,15 +1,20 @@
 apiVersion: v1
 kind: Pod
 metadata:
-  name: ubuntu-sysbox
+  name: ubuntu-sysbox-az
+  annotations:
+    io.kubernetes.cri-o.userns-mode: "auto:size=65536"
 spec:
+  runtimeClassName: sysbox-runc
   containers:
-  - image: blockchainazure.azurecr.io/ubuntu-sysbox:1
-    name: mypod
+  - name: ubuntu-sysbox-az
+    image: aravind28196/ubuntu-sysbox-az:1
+    command: ["/sbin/init"]  # Start the container with the systemd init process
     volumeMounts:
-      - name: azure
-        mountPath: /mnt/data
+    - name: volume
+      mountPath: /mnt/data  # Mount the volume at /mnt/data
   volumes:
-  - name: azure
+  - name: volume
     persistentVolumeClaim:
-      claimName: pvc-azurefile
+      claimName: pvc-azurefile  # Persistent Volume Claim name
+  restartPolicy: Never  # Do not restart the container automatically
