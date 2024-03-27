@@ -3,28 +3,28 @@
 apiVersion: apps/v1 # for versions before 1.8.0 use apps/v1beta1
 kind: Deployment
 metadata:
-  name: chaincode-basic-org1
+  name: peer1-chaincode-basic-org1
   labels:
-    app: chaincode-basic-org1
+    app: peer1-chaincode-basic-org1
 spec:
   selector:
     matchLabels:
-      app: chaincode-basic-org1
+      app: peer1-chaincode-basic-org1
   strategy:
     type: Recreate
   template:
     metadata:
       labels:
-        app: chaincode-basic-org1
+        app: peer1-chaincode-basic-org1
     spec:
       containers:
         - image: aravind28196/basic-cc-repo:1.0
           imagePullPolicy: Always
-          name: chaincode-basic-org1
+          name: peer1-chaincode-basic-org1
           env:
             - name: CHAINCODE_ID
               value: "basic:7010dc6f08c0f792bd73680ab0be7ebabd6750e9f94bdee0b79066317ef8ea48"
             - name: CHAINCODE_SERVER_ADDRESS
-              value: "0.0.0.0:7052"
+              value: "0.0.0.0:8052"
           ports:
-            - containerPort: 7052
+            - containerPort: 8052

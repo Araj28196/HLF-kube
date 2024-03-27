@@ -1,33 +1,33 @@
 kind: Service
 apiVersion: v1
 metadata:
-  name: peer0-org2
+  name: peer1-org1
   labels:
-    app: peer0-org2
+    app: peer1-org1
 spec:
   selector:
-    name: peer0-org2
+    name: peer1-org1
   type: ClusterIP
   ports:
     - name: grpc
-      port: 7051
+      port: 8051
       protocol: TCP
     - name: event
-      port: 7061
+      port: 8061
       protocol: TCP
     - name: couchdb
-      port: 5984
+      port: 6984
       protocol: TCP
 
 ---
-#---------------- Peer0 org2 Metrics Service ---------------
+#---------------- Peer0 Org1 Metrics Service ---------------
 apiVersion: v1
 kind: Service
 metadata:
   labels:
-    app: peer0-org2
+    app: peer1-org1
     metrics-service: "true"
-  name: peer0-org2-metrics
+  name: peer1-org1-metrics
 spec:
   type: ClusterIP
   ports:
@@ -35,4 +35,4 @@ spec:
     port: 9443
     targetPort: 9443
   selector:
-    name: peer0-org2
+    name: peer1-org1

@@ -1,15 +1,15 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: cli-peer0-org1
+  name: cli-peer1-org1
 spec:
   selector:
     matchLabels:
-      name: cli-peer0-org1
+      name: cli-peer1-org1
   template:
     metadata:
       labels:
-        name: cli-peer0-org1
+        name: cli-peer1-org1
     spec:
       volumes:
         - name: fabricfiles
@@ -17,7 +17,7 @@ spec:
             claimName: mypvc
 
       containers:
-        - name: cli-peer0-org1
+        - name: cli-peer1-org1
           stdin: true
           tty: true
           resources:
@@ -33,7 +33,7 @@ spec:
             - name: ORDERER_CA
               value: /organizations/ordererOrganizations/example.com/orderers/orderer.example.com/msp/tlscacerts/tlsca.example.com-cert.pem
             - name: CORE_PEER_ADDRESS
-              value: peer0-org1:7051
+              value: peer1-org1:8051
             - name: CORE_PEER_ID
               value: cli.peer0.org1.example.com
             - name: CORE_PEER_LOCALMSPID

@@ -11,4 +11,4 @@ spec:
       port: 7052
       targetPort: 7052
   selector:
-    app: chaincode-basic-org1
+    app: peer0-chaincode-basic-org1
