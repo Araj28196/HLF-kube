@@ -14,7 +14,7 @@ spec:
       volumes:
         - name: fabricfiles
           persistentVolumeClaim:
-            claimName: mypvc
+            claimName: pvc-azurefile
         - name: explorer-config
           configMap:
             name: explorer-config

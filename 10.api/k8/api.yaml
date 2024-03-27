@@ -15,7 +15,7 @@ spec:
       volumes:
         - name: data
           persistentVolumeClaim:
-            claimName: mypvc
+            claimName: pvc-azurefile
         - name: ca-client-config
           configMap:
             name: ca-client-config

@@ -14,7 +14,7 @@ spec:
       volumes:
         - name: fabricfiles
           persistentVolumeClaim:
-            claimName: mypvc
+            claimName: pvc-azurefile
 
       containers:
         - name: cli-peer1-org1

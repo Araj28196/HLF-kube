@@ -12,7 +12,7 @@ spec:
       volumes:
         - name: fabricfiles
           persistentVolumeClaim:
-            claimName: mypvc
+            claimName: pvc-azurefile
       containers:
         - name: create-certs
           image: hyperledger/fabric-ca-tools:latest
